@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+    backend:
+        container_name: backend-api
+        volumes:
+            - '$PWD/simple_api/student_age.json:/data/student_age.json'
+        image: 'student-list:v1'
+        networks:
+            - student
+
+
+    frontend:
+        environment:
+           - 'USERNAME=toto'
+           - 'PASSWORD=python'
+        container_name: front-web
+        volumes:
+            - './website:/var/www/html'
+        image: 'php:apache'
+
+        depends_on:
+           - backend
+        ports:
+            - '8000:80'
+        networks:
+            - student
+networks:
+    student:
