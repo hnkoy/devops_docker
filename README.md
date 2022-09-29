@@ -15,3 +15,14 @@ the docker compose file will:
 - create a network
 - create a volume
 - and create containers
+
+# Mini project
+
+This project is a simple application to list student with a webserver (PHP) and API (Flask)
+the steps is to:
+- build a docker image for the Flask application using a dockerfile
+the first module is a REST API (with basic authentication needed) who send the desire list of the student based on JSON file
+The second module is a web app written in HTML + PHP who enable end-user to get a list of students
+- deploy 2 services using IAC with Docker-compose 
+the first service will expose the frontend app lauching a apache container using php:apache image
+the second service will expose the API to the frontend using the API Flask image built 
