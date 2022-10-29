@@ -8,7 +8,7 @@ This repository gathers all my docker works done during my DevOps training at Ea
 First create a Dockerfile and :
 - install  ngnix
 - install git
-- and clone the project on GitHub 
+- and clone the project from GitHub repository
  # Dockerfile
  ```
 ** start image from ubuntu os image **
