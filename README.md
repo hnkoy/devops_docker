@@ -1,8 +1,10 @@
 # devops_docker
 
-This repository gathers all my docker works done during my Devops training at EazyTraining
+This repository gathers all my docker works done during my DevOps training at EazyTraining
 3 projects done:
 # 1. how to deploy a static website using docker
+
+![enter image description here](https://raw.githubusercontent.com/hnkoy/devops_docker/master/webapp_infra.jpg)
 First create a Dockerfile and :
 - install  ngnix
 - install git
