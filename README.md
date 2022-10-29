@@ -1,14 +1,52 @@
 # devops_docker
 
 This repository gathers all my docker works done during my Devops training at EazyTraining
-you will found images:
-# how to deploy static website using docker
-this image will:
-- install automatically ngnix
+3 projects done:
+# 1. how to deploy a static website using docker
+First create a Dockerfile and :
+- install  ngnix
 - install git
-- and clone the project on github 
+- and clone the project on GitHub 
+ # Dockerfile
+ ```
+** start image from ubuntu os image **
+ FROM ubuntu
+ 
+ ** specify the image author **
+MAINTAINER henock (henocknkoy9@gmail.com)
 
-# How to deploy odoo using ifrastructure as code with docker compose
+** update os before install **
+RUN apt-get update
+
+** disable interactivity and install git and nginx **
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y nginx git
+
+** remove the default page nginx **
+RUN rm -Rf /var/www/html/*
+
+** clone project from GitHub in /var/www/html**
+RUN git clone https://github.com/diranetafen/static-website-example.git /var/www/html/
+
+** expose the app on port 80 **
+EXPOSE 80
+** Start Nginx server **
+CMD [“nginx”, “-g”, “daemon off;”]
+ ```      
+# Build image
+make sure you are in the Dockerfile directory and run this command to build and tag your image
+```   
+docker build -t webapp:v1 .
+ ```
+# Run container
+Tape this command to run your container
+```
+docker run -d --name webapp -p 80:80
+```
+```
+-d :run the container on background |--name : name your containe|-p : specify the listen port
+```
+
+# 2. How to deploy odoo using ifrastructure as code with docker compose
 the docker compose file will:
 - get the official image odoo:14.0
 - get the official image postgress
