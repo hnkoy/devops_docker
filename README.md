@@ -52,6 +52,7 @@ docker run -d --name webapp -p 80:80
 ![enter image description here](https://raw.githubusercontent.com/hnkoy/devops_docker/master/odoo_iac_infra.jpg)
 
 First, create a docker-compose.yml file and in the file :
+
 create 2 services :
 - service "web" for odoo:14.0 frontend
 - service "DB" for Postgres
@@ -132,7 +133,7 @@ networks:
 odoo_network:
 **                              
   ```
-make sure you are in the Docker-compose directory and run this command to run and the containers
+make sure you are in the Docker-compose directory and run this command to run the containers
 ```
 run docker-compose up
 ```
