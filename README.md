@@ -278,9 +278,9 @@ docker push localhost:5000/student-list:v1
  ```
 run it as a container using this command
 ```
-docker run -d -p 8080:80 --name registry-ui -e REGISTRY_URL="http://host_IP:5000" joxit/docker-registry-ui:static
+docker run -d -p 8080:80 --name registry-ui -e REGISTRY_URL="http://host_IP:8080" joxit/docker-registry-ui:static
 ```
 and you can check the registry UI to the browser using this link
 ```
-http://host_IP:5000
+http://host_IP:8080
 ```
