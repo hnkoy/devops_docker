@@ -50,6 +50,7 @@ docker run -d --name webapp -p 80:80
 # 2. How to deploy odoo using ifrastructure as code with docker compose
 
 ![enter image description here](https://raw.githubusercontent.com/hnkoy/devops_docker/master/odoo_iac_infra.jpg)
+
 First, create a docker-compose.yml file and in the file :
 create 2 services :
 - service "web" for odoo:14.0 frontend
