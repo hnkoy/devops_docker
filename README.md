@@ -50,7 +50,6 @@ docker run -d --name webapp -p 80:80
 # 2. How to deploy odoo using ifrastructure as code with docker compose
 
 ![enter image description here](https://raw.githubusercontent.com/hnkoy/devops_docker/master/odoo_iac_infra.jpg)
-
 First, create a docker-compose.yml file and in the file :
 create 2 services :
 - service "web" for odoo:14.0 frontend
@@ -261,7 +260,7 @@ docker ps
 Start the registry and run this command
 
 ```
-docker run -d -p 5000:8080 --name registry registry:2
+docker run -d -p 5000:5000 --name registry registry:2
 ```
 Tag the image so that it points to the registry
 ```
@@ -270,4 +269,14 @@ docker image tag student-list:v1 localhost:5000/student-list:v1
 Push the image to the registry
 ```
 docker push localhost:5000/student-list:v1
+```
+# Docker Registry UI
+ It's a user interface for  private docker registry. 
+ Pull the image into your local machine using this command
+ ```
+ docker pull joxit/docker-registry-ui:static
+ ```
+and run it as a container using this command
+```
+docker run -d -p 8080:80 --name registry-ui -e REGISTRY_URL="http://host_IP:5000" joxit/docker-registry-ui:static
 ```
