@@ -260,7 +260,7 @@ docker ps
 Start the registry and run this command
 
 ```
-docker run -d -p 5000:5000 --name registry registry:2
+docker run -d -p 5000:8080 --name registry registry:2
 ```
 Tag the image so that it points to the registry
 ```
